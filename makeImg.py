@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options
 import time
 
-def capture_full_page_screenshot_fixed_height(driver, file_path, window_width, window_height):
+def capture_page_screenshot(driver, file_path, window_width, window_height):
     # 固定のウィンドウサイズを設定
     driver.set_window_size(window_width, window_height)
 
@@ -42,7 +42,7 @@ for filename in os.listdir(current_directory):
         time.sleep(2)
 
         # 固定サイズの全体スクリーンショットを取得
-        capture_full_page_screenshot_fixed_height(driver, image_file_path, window_width, window_height)
+        capture_page_screenshot(driver, image_file_path, window_width, window_height)
 
         print(f"Conversion complete. Image saved at: {image_file_path}")
 
